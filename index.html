@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sweet Magnolia Bakery — Millbrook, WA</title>
+  <meta name="description" content="Family-owned bakery in Millbrook, Washington. Baked fresh daily with love." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+     Links & brand name: config.js → nav, business.name
+     ══════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#hero" class="nav-brand">
+      <span class="nav-brand-name" id="nav-brand-name"></span>
+      <span class="nav-brand-sub"  id="nav-brand-sub"></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links"></ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+     Photo:  config.js → photos.hero
+     Text:   config.js → hero.*
+     ══════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Welcome">
+  <!--
+    ╔═══════════════════════════════════════════════════╗
+    ║  HERO PHOTO → config.js → photos.hero            ║
+    ╚═══════════════════════════════════════════════════╝
+  -->
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-sub" id="hero-subheading"></p>
+    <h1 class="hero-script" id="hero-heading"></h1>
+    <p class="hero-caption" id="hero-caption"></p>
+    <div class="hero-badges">
+      <span class="hero-badge">🌾 Locally Sourced</span>
+      <span class="hero-badge">👩‍🍳 Family Owned</span>
+      <span class="hero-badge" id="hero-town"></span>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">scroll</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     OUR STORY
+     Photo:  config.js → photos.about
+     Text:   config.js → about.*
+     ══════════════════════════════════════════════════════════ -->
+<section id="about" aria-label="Our Story">
+  <div class="section-inner">
+
+    <h2 class="section-title fade-in" id="about-title"></h2>
+    <div class="divider fade-in"><span class="divider-icon">🌸</span></div>
+    <p class="section-subtitle fade-in" id="about-subtitle"></p>
+
+    <div class="about-grid">
+
+      <div class="about-image-wrap fade-in">
+        <div class="about-image-frame">
+          <!--
+            ╔═════════════════════════════════════════════════╗
+            ║  ABOUT PHOTO → config.js → photos.about        ║
+            ╚═════════════════════════════════════════════════╝
+          -->
+          <img id="about-img" src="" alt="The bakery team" loading="lazy" />
+          <div class="about-image-caption" id="about-img-caption"></div>
+        </div>
+      </div>
+
+      <div class="about-text fade-in">
+        <h2 id="about-title-inline" style="display:none"></h2>
+        <!-- Paragraphs populated from config.js → about.paragraphs -->
+        <div id="about-paragraphs"></div>
+
+        <div class="about-stat-row">
+          <div class="about-stat">
+            <div class="about-stat-number">17+</div>
+            <div class="about-stat-label">Years Baking</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-number">Daily</div>
+            <div class="about-stat-label">Fresh Baked</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-number">100%</div>
+            <div class="about-stat-label">From Scratch</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     MENU / SPECIALTIES
+     Photos: config.js → photos.menu (array, one per item)
+     Items:  config.js → menu.items
+     ══════════════════════════════════════════════════════════ -->
+<section id="menu" aria-label="Our Menu">
+  <div class="section-inner">
+
+    <h2 class="section-title fade-in" id="menu-title"></h2>
+    <div class="divider fade-in"><span class="divider-icon">🥐</span></div>
+    <p class="section-subtitle fade-in" id="menu-subtitle"></p>
+
+    <!-- Cards built dynamically from config.js → menu.items -->
+    <div class="menu-grid" id="menu-grid"></div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     GALLERY
+     Photos: config.js → photos.gallery (array)
+     Add or remove paths in config — gallery builds automatically
+     ══════════════════════════════════════════════════════════ -->
+<section id="gallery" aria-label="Photo Gallery">
+  <div class="section-inner">
+
+    <h2 class="section-title fade-in" id="gallery-title"></h2>
+    <div class="divider fade-in"><span class="divider-icon">📷</span></div>
+    <p class="section-subtitle fade-in" id="gallery-subtitle"></p>
+
+    <!-- Gallery items built from config.js → photos.gallery -->
+    <div class="gallery-grid" id="gallery-grid"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+      <div class="lightbox-inner">
+        <img id="lightbox-img" src="" alt="Gallery photo expanded" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     HOURS & LOCATION
+     Config: config.js → hours.*, business.*
+     Today's hours row is automatically highlighted
+     ══════════════════════════════════════════════════════════ -->
+<section id="hours" aria-label="Hours and Location">
+  <div class="section-inner">
+
+    <h2 class="section-title fade-in" id="hours-title" style="color: var(--secondary)"></h2>
+    <div class="divider fade-in" style="--secondary: #C8975A"><span class="divider-icon">🕐</span></div>
+    <p class="section-subtitle fade-in" id="hours-subtitle" style="color: rgba(253,248,242,0.65)"></p>
+
+    <div class="hours-grid">
+
+      <!-- Hours table — built from config.js → hours.schedule -->
+      <div class="fade-in">
+        <div id="hours-table"></div>
+        <p class="hours-note" id="hours-note"></p>
+      </div>
+
+      <!-- Location card -->
+      <div class="location-card fade-in">
+        <h3>Find Us</h3>
+
+        <div class="location-item">
+          <span class="location-icon">📍</span>
+          <div class="location-detail" id="location-address"></div>
+        </div>
+
+        <div class="location-item">
+          <span class="location-icon">📞</span>
+          <div class="location-detail">
+            <a id="location-phone-link" href="tel:"></a>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <span class="location-icon">✉️</span>
+          <div class="location-detail">
+            <a id="location-email-link" href="mailto:"></a>
+          </div>
+        </div>
+
+        <a href="#" class="map-btn" id="location-map-btn" target="_blank" rel="noopener">
+          📍 Get Directions
+        </a>
+
+        <!-- Social links — hidden if URLs not set in config -->
+        <div class="social-row">
+          <a href="#" class="social-btn" id="social-facebook" target="_blank" rel="noopener">
+            📘 Facebook
+          </a>
+          <a href="#" class="social-btn" id="social-instagram" target="_blank" rel="noopener">
+            📸 Instagram
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CONTACT
+     Config: config.js → contact.*
+     Submissions → config.js → contact.formspreeEndpoint
+     ══════════════════════════════════════════════════════════ -->
+<section id="contact" aria-label="Contact">
+  <div class="section-inner">
+
+    <h2 class="section-title fade-in" id="contact-title"></h2>
+    <div class="divider fade-in"><span class="divider-icon">💌</span></div>
+    <p class="section-subtitle fade-in" id="contact-subtitle"></p>
+
+    <!-- Setup note — auto-hides once formspreeEndpoint is configured -->
+    <div class="setup-note" id="contact-setup-note">
+      <strong>📋 One-time Formspree Setup</strong>
+      <ol>
+        <li>Go to <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> → create free account.</li>
+        <li>Click <strong>+ New Form</strong> → name it <em>"Bakery Contact"</em>.</li>
+        <li>Copy your endpoint: <code>https://formspree.io/f/xxxxxxxx</code></li>
+        <li>Open <code>js/config.js</code> → paste into <code>contact.formspreeEndpoint</code>.</li>
+        <li>This yellow box disappears automatically once configured.</li>
+      </ol>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Left: info -->
+      <div class="contact-info fade-in">
+        <h3 id="contact-info-name">Sweet Magnolia</h3>
+        <p id="contact-intro"></p>
+
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <span id="contact-address"></span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📞</span>
+          <a id="contact-phone" href="tel:"></a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">✉️</span>
+          <a id="contact-email" href="mailto:"></a>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="contact-form-wrap fade-in">
+        <form id="contact-form" novalidate>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Your Name *</label>
+              <input class="form-input" type="text" id="contact-name" name="name"
+                     placeholder="First &amp; Last Name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email-input">Email *</label>
+              <input class="form-input" type="email" id="contact-email-input" name="email"
+                     placeholder="your@email.com" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact-phone-input">Phone</label>
+              <input class="form-input" type="tel" id="contact-phone-input" name="phone"
+                     placeholder="Optional" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inquiry-type">Inquiry Type</label>
+              <!-- Options populated from config.js → contact.inquiryTypes -->
+              <select class="form-select" id="inquiry-type" name="inquiry_type"></select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message *</label>
+            <textarea class="form-textarea" id="contact-message" name="message"
+                      placeholder="Tell us how we can help…" required></textarea>
+          </div>
+
+          <button class="btn-submit" type="submit" id="contact-submit">
+            Send Message →
+          </button>
+        </form>
+
+        <div class="form-status" id="contact-status" role="alert" aria-live="polite"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+     Text: config.js → footer.*, business.*
+     ══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-script" id="footer-name"></div>
+  <p id="footer-tagline"></p>
+  <p id="footer-line2"></p>
+  <p id="footer-copy" style="margin-top:1rem;opacity:0.4;font-size:0.78rem"></p>
+</footer>
+
+<!-- Scripts — config must load before main -->
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
