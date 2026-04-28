@@ -44,28 +44,28 @@ const SITE = {
 
   photos: {
     hero:  "images/bakery.jpg",   // Main hero image at top of page
-    about: "images/about.jpg",  // Photo in the Our Story section
+    about: "images/coming-soon.jpg",  // Photo in the Our Story section
 
     // Menu item photos — one per item in menu.items below
     menu: [
-      "images/menu-01.jpg",
-      "images/menu-02.jpg",
-      "images/menu-03.jpg",
-      "images/menu-04.jpg",
-      "images/menu-05.jpg",
-      "images/menu-06.jpg"
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg"
     ],
 
     // Gallery — add or remove paths freely, gallery builds automatically
     gallery: [
-      "images/gallery-01.jpg",
-      "images/gallery-02.jpg",
-      "images/gallery-03.jpg",
-      "images/gallery-04.jpg",
-      "images/gallery-05.jpg",
-      "images/gallery-06.jpg",
-      "images/gallery-07.jpg",
-      "images/gallery-08.jpg"
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg",
+      "images/coming-soon.jpg"
     ]
   },
 
