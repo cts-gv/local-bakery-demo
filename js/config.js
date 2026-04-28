@@ -43,7 +43,7 @@ const SITE = {
   //   For external URLs use the full https:// address.
 
   photos: {
-    hero:  "images/hero.jpg",   // Main hero image at top of page
+    hero:  "images/bakery.jpg",   // Main hero image at top of page
     about: "images/about.jpg",  // Photo in the Our Story section
 
     // Menu item photos — one per item in menu.items below
