@@ -79,7 +79,7 @@ const SITE = {
   hero: {
     heading:    "Sweet Magnolia Bakery",
     subheading: "Baked Fresh Daily",
-    caption:    "Made from scratch, made with love — right here in Millbrook."
+    caption:    "Made from scratch, made with love — right here in Grandview."
   },
 
   // ── ABOUT SECTION ────────────────────────────────────────
