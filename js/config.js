@@ -12,11 +12,11 @@ const SITE = {
   business: {
     name:     "Sweet Magnolia Bakery",
     tagline:  "Baked fresh daily with love",
-    town:     "Millbrook, Washington",
+    town:     "Grandview, Washington",
     phone:    "(509) 555-0142",           // ← update
     email:    "hello@sweetmagnolia.com",  // ← update
     address:  "114 Main Street",
-    city:     "Millbrook, WA 98XXX",      // ← update zip
+    city:     "Grandview, WA 98XXX",      // ← update zip
     mapLink:  "https://maps.google.com",  // ← update to real Google Maps link
     facebook: "https://facebook.com",    // ← update or set to "" to hide
     instagram:"https://instagram.com",   // ← update or set to "" to hide
@@ -87,7 +87,7 @@ const SITE = {
     title:    "Our Story",
     subtitle: "A family tradition, one loaf at a time.",
     paragraphs: [
-      "Sweet Magnolia Bakery has been a cornerstone of Millbrook since 2008, when Margaret and Tom Holloway turned their lifelong passion for baking into something the whole town could enjoy. What started as weekend farmers market tables quickly grew into the beloved Main Street shop it is today.",
+      "Sweet Magnolia Bakery has been a cornerstone of Grandview since 2008, when Margaret and Tom Holloway turned their lifelong passion for baking into something the whole town could enjoy. What started as weekend farmers market tables quickly grew into the beloved Main Street shop it is today.",
       "Everything we make is baked fresh every morning using time-honored family recipes, locally sourced ingredients, and a whole lot of heart. From our signature sourdough to our seasonal fruit pies, each item that comes out of our oven is made the way food was always meant to be made — by hand, with care, for the people we love.",
       "We're proud to be part of this community, and grateful every single day for the neighbors, families, and friends who walk through our door."
     ],
@@ -104,7 +104,7 @@ const SITE = {
     items: [
       {
         name:        "Country Sourdough",
-        description: "Our signature loaf. Slow-fermented 48 hours, crispy crust, chewy crumb. A Millbrook staple.",
+        description: "Our signature loaf. Slow-fermented 48 hours, crispy crust, chewy crumb. A Grandview staple.",
         price:       "$8",
         badge:       "Fan Favorite"
       },
@@ -202,7 +202,7 @@ const SITE = {
   // ── FOOTER ───────────────────────────────────────────────
   footer: {
     tagline: "Baked fresh daily with love",
-    line2:   "114 Main Street · Millbrook, WA",  // ← update
+    line2:   "114 Some Street · GView, WA",  // ← update
     copy:    "© 2025 Sweet Magnolia Bakery. All rights reserved."  // ← update year
   }
 
